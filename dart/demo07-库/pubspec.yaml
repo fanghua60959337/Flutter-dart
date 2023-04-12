@@ -1,0 +1,6 @@
+name: http
+description: A new flutter module project.
+dependencies:
+environment:
+  sdk: '>=2.10.0 <3.0.0'
+http: ^0.13.5
