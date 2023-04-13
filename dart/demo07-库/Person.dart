@@ -1,3 +1,10 @@
+
+// Flutter Packages官网：https://pub.dev/
+// https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html jdk下载地址
+
+
+
+
 class Person {
   String name;
   int age;
@@ -22,6 +29,8 @@ void main() {
 
   Student student = Student(name: '张三');//次数的可选参数
   print(  student.getName());
+
+  /Users/ouyang/Documents/development/flutter
 }
 
 

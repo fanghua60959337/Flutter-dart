@@ -27,20 +27,20 @@ class Contaioner1 {
 void main() {
   Contaioner c1 =  Contaioner(width:10,height:20);
   Contaioner c2 =  Contaioner(width:10,height:20);
-  print(identical(c1, c2));//指向不同的地址
+  print(identical(c1, c2));//指向不同的地址因为他的成员变量没有添加const关键字修饰
 
 
   Contaioner1 c3 =  Contaioner1(width:10,height:20);
   Contaioner1 c4 =  Contaioner1(width:10,height:20);
-  print(identical(c3, c4));//指向不同的地址
+  print(identical(c3, c4));//指向不同的地址因为对象创建的时候没有添加const关键字
+
+
+  Contaioner1 c7 = const Contaioner1(width:110,height:20);
+  Contaioner1 c8 = const Contaioner1(width:10,height:20);
+  print(identical(c7, c8));//指向不同一个的地址应为他里面的值不一样
 
 //注意这里如果要指向同一额地址的话必须满足；1成员变量是final修饰 2构造函数const修饰 3创建对象的的时候添加const修饰
   Contaioner1 c5 = const Contaioner1(width:10,height:20);
   Contaioner1 c6 = const Contaioner1(width:10,height:20);
   print(identical(c5, c6));//指向同一个的地址 
-
-  Contaioner1 c7 = const Contaioner1(width:110,height:20);
-  Contaioner1 c8 = const Contaioner1(width:10,height:20);
-  print(identical(c7, c8));//指向不同一个的地址
-
 }
