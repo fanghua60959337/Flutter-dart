@@ -116,16 +116,6 @@
 //   }
 // }
 import 'package:flutter/material.dart';
-// void main() {
-//   runApp(const Center(
-//     child: Text('你好',
-//     textDirection:TextDirection.ltr ,
-//     style:TextStyle(
-//       color:Color.fromARGB(244, 244, 123,1),
-//       fontSize: 40)),
-//   ));
-// }
-
 void main() {
   runApp(MaterialApp(
     home:Scaffold(//Scaffold 是Material Design 布局结构的基本实现。此类提供了用于显示drawer、snackbar 和底部 sheet 的API。

@@ -9,9 +9,7 @@ void main() {
           SizedBox(height: 20),//占用一块高度做默认间隔使用
           Circular(),
           SizedBox(height: 20),//占用一块高度做默认间隔使用
-          // ClipImg(),
-          LocalClipOvalImage(),
-          // LocalImage(),
+          ClipImg()
         ],
       )
     ),
@@ -22,12 +20,6 @@ void main() {
 //图片地址：
 // https://www.itying.com/images/201906/goods_img/1120_P_1560842352183.png
 // https://www.itying.com/themes/itying/images/ionic4.png
-
-//加载本地图片的方法：
-//步骤一：需要创建一个存放图片的文件 images
-//步骤二：在图片文件家里面创建一个2.0X 和 3.0X的文件
-//步骤三在pubspec.yaml文件里面打开assets： 添加我们的图片文件目录
-
 class Myapp extends StatelessWidget {
   const Myapp({Key? key}) : super(key: key);
 
@@ -87,37 +79,6 @@ class ClipImg extends StatelessWidget {
   }
 }
 
-//本地图片裁剪圆形
-class LocalClipOvalImage extends StatelessWidget {
-  const LocalClipOvalImage({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return ClipOval(
-        child: Image.asset('images/img.png',
-            width: 150,
-            height: 150,
-            fit: BoxFit.cover
-        )
-    );
-  }
-}
-
-//加载本地图片
-class LocalImage extends StatelessWidget {
-  const LocalImage ({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 150,
-      width: 150,
-      decoration:const BoxDecoration(
-          color: Colors.yellow,
-      ) ,
-      child: Image.asset('images/img.png',fit: BoxFit.cover),
-    );
-  }
-}
 
 
