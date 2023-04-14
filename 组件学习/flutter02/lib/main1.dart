@@ -130,7 +130,7 @@ void main() {
   runApp(MaterialApp(
     home:Scaffold(//Scaffold 是Material Design 布局结构的基本实现。此类提供了用于显示drawer、snackbar 和底部 sheet 的API。
       appBar: AppBar(title: Text('你好flutter')),
-      body: const Center(
+      body: const Center(//Center剧中组件
         child: Text('你好flutter',
             textDirection: TextDirection.ltr,
             style: TextStyle(
