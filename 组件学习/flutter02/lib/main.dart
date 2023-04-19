@@ -1,83 +1,118 @@
 import 'package:flutter/material.dart';
+import './res/listData.dart';
 // GridView使用
 void main() {
-  // StatelessWidget 无状态组件，状态不可变的自定义 widget
-  runApp(MaterialApp(
-    home:Scaffold(//Scaffold 是Material Design 布局结构的基本实现。此类提供了用于显示drawer、snackbar 和底部 sheet 的API。
-      appBar: AppBar(title: Text('你好flutter')),
-      body:Myapp(),
-      // body:Myapp1(),
-    ),
-    theme:ThemeData(
-      primarySwatch: Colors.yellow,
-    ) ,
-  ));
+   runApp(Mainapp());
+}
+
+class Mainapp extends StatelessWidget {
+  const Mainapp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return (MaterialApp(
+      home:Scaffold(//Scaffold 是Material Design 布局结构的基本实现。此类提供了用于显示drawer、snackbar 和底部 sheet 的API。
+        appBar: AppBar(title: Text('你好flutter')),
+        // body:Myapp(),
+        body:Myapp(),
+      ),
+      theme:ThemeData(
+        primarySwatch: Colors.yellow,
+      ) ,
+    ));
+  }
 }
 
 //GridView.count
 class Myapp extends StatelessWidget {
   const Myapp({Key? key}):super(key: key);
-  // List<Widget> _initGridViewData(){
-  // List<Widget> templist = [];
-  // for(var i = 0; i< 12;i++){
-  //
-  // }
-  //
-  // }
+
+Widget _initGriViewData(context,indext){
+  return Container(
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.black26,
+            )
+          ),
+          child: Column(
+            children: [
+              Image.network("${listData[indext]['imageUrl']}"),
+              const SizedBox(height: 10),
+              Text('${listData[indext]['title']}', style: TextStyle(fontSize: 18)),
+            ],
+      
+          ),
+
+        );
+}
+
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    // throw UnimplementedError();
-    //实现网格布局的方法：
-    // 1通过GridView.count   通过crossAxisCount控制列
-    // 2、GridView.extent   通过maxCrossAkisExtent 自是适应控制
-    // 3、GridView.build实现动态网格布局
-    return GridView.count(crossAxisCount: 3,//crossAxisCount 设置现实多少列
-    children: [
-      Container(
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-            color: Colors.blue
+    return GridView.builder(
+      itemCount: listData.length,
+        padding:const EdgeInsets.all(10),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisSpacing:10,//水平间距
+          mainAxisSpacing:10,//垂直间距
+          crossAxisCount:2,//一行显示多少个元素
+          childAspectRatio: 1,//宽高比列
         ),
-         child:  const Text('第一个元素',style: TextStyle(
-           fontSize: 20
+        itemBuilder: (context,indext){
+          return Container(
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Colors.black26,
+              )
             ),
-       ),
-      )
-    ],
-    );
+            child: Column(
+              children: [
+                Image.network("${listData[indext]['imageUrl']}"),
+                const SizedBox(height: 10),
+                Text('${listData[indext]['title']}', style: TextStyle(fontSize: 18)),
+              ],
+        
+            ),
+
+          );
+        }
+
+     );
   }
 }
 
+// class Myapp extends StatelessWidget {
+//   const Myapp({Key? key}):super(key: key);
 
-//GGridView.extent
-class Myapp1 extends StatelessWidget {
-  const Myapp1({Key? key}):super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    // throw UnimplementedError();
-    //实现网格布局的方法：
-    // 1通过GridView.count   通过crossAxisCount控制列
-    // 2、GridView.extent   通过maxCrossAkisExtent 自是适应控制
-    // 3、GridView.build实现动态网格布局
-    return GridView.extent(
-      maxCrossAxisExtent:80,// 横轴子元素的最大长度
-      children: const [
-        Icon(Icons.pedal_bike),
-        Icon(Icons.home),
-        Icon(Icons.ac_unit),
-        Icon(Icons.pedal_bike),
-        Icon(Icons.settings),
-        Icon(Icons.pedal_bike),
-        Icon(Icons.beach_access),
-        Icon(Icons.cake),
-        Icon(Icons.pedal_bike),
-        Icon(Icons.pedal_bike),
-        Icon(Icons.pedal_bike),
-        Icon(Icons.pedal_bike),
-        Icon(Icons.circle),
-      ],
-    );
-  }
-}
+// Widget _initGriViewData(context,indext){
+//   return Container(
+//           decoration: BoxDecoration(
+//             border: Border.all(
+//               color: Colors.black26,
+//             )
+//           ),
+//           child: Column(
+//             children: [
+//               Image.network("${listData[indext]['imageUrl']}"),
+//               const SizedBox(height: 10),
+//               Text('${listData[indext]['title']}', style: TextStyle(fontSize: 18)),
+//             ],
+      
+//           ),
+
+//         );
+// }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return GridView.builder(
+//       itemCount: listData.length,
+//         padding:const EdgeInsets.all(10),
+//         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+//           crossAxisSpacing:10,//水平间距
+//           mainAxisSpacing:10,//垂直间距
+//           crossAxisCount:2,//一行显示多少个元素
+//           childAspectRatio: 1,//宽高比列
+//         ),
+//         itemBuilder: _initGriViewData);
+//   }
+// }

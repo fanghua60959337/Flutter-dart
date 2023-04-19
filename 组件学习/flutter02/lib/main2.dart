@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 void main() {
+
+// MaterialApp：是一个方便的Widget，它封装了应用程序实现Material Design所需要的一些Widget。一般作为顶层widget使用。
+// 常用的属性：
+// home（主页）title（标题）color（颜色）theme（主题）routes（路由）
+
+
   // StatelessWidget 无状态组件，状态不可变的自定义 widget
   runApp(MaterialApp(
     home:Scaffold(//Scaffold 是Material Design 布局结构的基本实现。此类提供了用于显示drawer、snackbar 和底部 sheet 的API。
