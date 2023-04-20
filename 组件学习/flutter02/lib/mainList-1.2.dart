@@ -44,3 +44,10 @@ class Myapp extends StatelessWidget {
     );
   }
 }
+
+
+              //   Expanded(child: Column(
+              //       Expanded(child:  Image.network('https://www.itying.com/images/flutter/1.png')),
+              //       Expanded(child:  Image.network('https://www.itying.com/images/flutter/1.png')),
+              //   ),flex:1),
+              //  ), 
