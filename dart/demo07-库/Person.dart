@@ -29,8 +29,6 @@ void main() {
 
   Student student = Student(name: '张三');//次数的可选参数
   print(  student.getName());
-
-  /Users/ouyang/Documents/development/flutter
 }
 
 

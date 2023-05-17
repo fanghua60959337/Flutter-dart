@@ -33,7 +33,7 @@ class Myapp extends StatelessWidget {
                     child:  Image.network("${value['imageUrl']}",),
                     ),
                     const SizedBox(height:10),
-                    Text('${value['title']}', style: TextStyle(fontSize: 18)),
+                    Text('${value['title']}', style: TextStyle(fontSize: 18),textAlign: TextAlign.left,),
                   ],
                 ),
         );

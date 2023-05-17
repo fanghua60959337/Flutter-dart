@@ -22,7 +22,8 @@ class Mainapp extends StatelessWidget {
       ) ,
     ));
   }
-}//第一种方法通过设置Container中的padding来设置间距
+}
+//第一种方法通过设置Container中的padding来设置间距
 class Myapp extends StatelessWidget {
   const Myapp({Key? key}):super(key: key);
 
@@ -35,8 +36,7 @@ class Myapp extends StatelessWidget {
    }
 }
 
-//使用Padding 组件设置间距
-
+//第二种使用Padding 组件设置间距
 class Myapp1 extends StatelessWidget {
   const Myapp1({Key? key}):super(key: key);
 

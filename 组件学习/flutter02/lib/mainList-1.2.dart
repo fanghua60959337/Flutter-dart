@@ -33,7 +33,7 @@ class Myapp extends StatelessWidget {
           height: 44,
           child:Text('我是一个标题',textAlign: TextAlign.center,style: TextStyle(fontSize: 22),),
         ),
-        Image.network('https://www.itying.com/images/flutter/1.png'),
+        Image.network('https://www.itying.com/images/flutter/1.png',fit: BoxFit.cover,),
         Container(
           padding:const EdgeInsets.fromLTRB(0, 10, 0, 0),
           height: 44,

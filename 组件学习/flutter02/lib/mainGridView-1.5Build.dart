@@ -107,8 +107,7 @@ Widget _initGriViewData(context,indext){
     return GridView.builder(//使用GridView.builder形式创建GridView 同时通过设置SliverGridDelegateWithFixedCrossAxisCount和crossAxisCount是配套使用
       itemCount: listData.length,//注意这里必须传递
         padding:const EdgeInsets.all(10),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisSpacing:10,//水平间距
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(//SliverGridDelegateWithFixedCrossAxisCount crossAxisCount 配套使用
           mainAxisSpacing:10,//垂直间距
           crossAxisCount:2,//一行显示多少个元素
           childAspectRatio: 1,//宽高比列
